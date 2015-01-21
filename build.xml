@@ -19,8 +19,8 @@
 	</target>
 	
 	<target name="test" depends="compile">
+	    <mkdir dir="${target.report.dir}" />
 		<junit fork="true" forkmode="once"  printsummary="true" showoutput="true" failureproperty="failed-test" haltonfailure="true" >
-		    
 			<formatter type="plain" usefile="false" />
             <formatter type="xml" />
 			<classpath location="target/classes-test/" />

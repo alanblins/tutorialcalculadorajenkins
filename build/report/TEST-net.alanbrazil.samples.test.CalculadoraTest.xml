@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="dev-alan" name="net.alanbrazil.samples.test.CalculadoraTest" skipped="0" tests="1" time="0.069" timestamp="2015-01-21T12:04:13">
+<testsuite errors="0" failures="1" hostname="dev-alan" name="net.alanbrazil.samples.test.CalculadoraTest" skipped="0" tests="1" time="0.076" timestamp="2015-01-21T12:35:44">
   <properties>
-    <property name="ant.project.invoked-targets" value="report" />
+    <property name="ant.project.invoked-targets" value="jar" />
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-7-oracle/jre/lib/amd64" />
     <property name="java.vm.version" value="24.72-b04" />
@@ -48,7 +48,7 @@
     <property name="java.vm.specification.version" value="1.7" />
     <property name="java.home" value="/usr/lib/jvm/java-7-oracle/jre" />
     <property name="sun.arch.data.model" value="64" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner net.alanbrazil.samples.test.CalculadoraTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=true formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/alan_lins/desenvolvimento/android/workspace/CalculadoraJenkins/build/report/TEST-net.alanbrazil.samples.test.CalculadoraTest.xml crashfile=/home/alan_lins/desenvolvimento/android/workspace/CalculadoraJenkins/junitvmwatcher1474525266462838354.properties propsfile=/home/alan_lins/desenvolvimento/android/workspace/CalculadoraJenkins/junit3379383146623424910.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner net.alanbrazil.samples.test.CalculadoraTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=true formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/alan_lins/desenvolvimento/android/workspace/CalculadoraJenkins/build/report/TEST-net.alanbrazil.samples.test.CalculadoraTest.xml crashfile=/home/alan_lins/desenvolvimento/android/workspace/CalculadoraJenkins/junitvmwatcher2474434945875233193.properties propsfile=/home/alan_lins/desenvolvimento/android/workspace/CalculadoraJenkins/junit148096186644871148.properties" />
     <property name="java.specification.vendor" value="Oracle Corporation" />
     <property name="user.language" value="pt" />
     <property name="ant.file.type.Calculadora Jenkins" value="file" />
@@ -67,7 +67,11 @@
     <property name="ant.file.type" value="file" />
     <property name="sun.cpu.isalist" value="" />
   </properties>
-  <testcase classname="net.alanbrazil.samples.test.CalculadoraTest" name="soma" time="0.003" />
+  <testcase classname="net.alanbrazil.samples.test.CalculadoraTest" name="soma" time="0.009">
+    <failure message="expected:&lt;4.0&gt; but was:&lt;5.0&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;4.0&gt; but was:&lt;5.0&gt;
+	at net.alanbrazil.samples.test.CalculadoraTest.soma(CalculadoraTest.java:12)
+</failure>
+  </testcase>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
