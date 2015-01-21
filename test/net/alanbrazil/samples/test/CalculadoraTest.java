@@ -11,4 +11,10 @@ public class CalculadoraTest {
 		int result = Calculadora.somar(1, 3);
 		assertEquals(4, result,Integer.MIN_VALUE);	
 	}
+	
+	@Test
+	public void substracao(){
+		int result = Calculadora.subtrair(7, 2);
+		assertEquals(5, result);	
+	}
 }
