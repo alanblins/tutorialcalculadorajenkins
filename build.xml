@@ -1,0 +1,49 @@
+	
+<project name="Calculadora Jenkins">
+	
+    <property name="target.dir" location="build" />
+    <property name="target.report.dir" location="${target.dir}/report" />
+     
+	<path id="tests.classpath" path=".">
+		<fileset dir="lib/">
+			<include name="*.jar" />
+		</fileset>
+		<pathelement path="target/classes/" />
+	</path>
+	
+	<target name="compile">
+		<mkdir dir="target/classes/"/>
+		<mkdir dir="target/classes-test/"/>
+		<javac destdir="target/classes/" srcdir="src" debug="true" encoding="UTF-8" />
+		<javac destdir="target/classes-test/" srcdir="test" classpathref="tests.classpath" debug="true" encoding="UTF-8" />
+	</target>
+	
+	<target name="test" depends="compile">
+		<junit fork="true" forkmode="once"  printsummary="true" showoutput="true" failureproperty="failed-test" haltonfailure="true" >
+		    
+			<formatter type="plain" usefile="false" />
+            <formatter type="xml" />
+			<classpath location="target/classes-test/" />
+			<classpath refid="tests.classpath" />
+			<batchtest fork="true" todir="${target.report.dir}">
+				<fileset dir="target/classes-test" >
+					<include name="**/*Test.class" />
+				</fileset>
+			</batchtest>
+		</junit>
+	</target>
+	
+	 <target name="report" depends="test">
+        <mkdir dir="${target.report.dir}/html" />
+        <junitreport todir="${target.report.dir}">
+            <fileset dir="${target.report.dir}">
+                <include name="TEST-*.xml" />
+            </fileset>
+            <report todir="${target.report.dir}/html" />
+        </junitreport>
+    </target>
+	
+	<target name="jar" depends="test">
+		<jar destfile="target/calculadora.jar" basedir="target/classes/" />
+	</target>
+</project>
