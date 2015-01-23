@@ -44,6 +44,10 @@
     </target>
 	
 	<target name="jar" depends="test">
-		<jar destfile="target/calculadora.jar" basedir="target/classes/" />
+		<jar destfile="target/calculadora.jar" basedir="target/classes/" >
+		     <manifest>
+                <attribute name="Main-Class" value="net.alanbrazil.samples.Main"/>
+            </manifest>
+		</jar>
 	</target>
 </project>
